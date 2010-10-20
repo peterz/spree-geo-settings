@@ -1,0 +1,61 @@
+<% content_for :head do -%>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <%= javascript_include_tag 'geo' %>
+  <%= stylesheet_link_tag 'geo' %>
+<% end -%>
+
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<div id="geo_wrapper">
+  <div id="geo_settings">
+    <h1><%= t("geo_settings") %></h1>
+
+    <div>
+      <h2><%= t('address') %></h2>
+      <% if Spree::Config[:address] -%>
+        <p>
+          <%= Spree::Config[:address] %> ( <%= @lat %>, <%= @lng %> )
+        </p>
+      <% end -%>
+    </div>
+    <div>
+      <h2><%= t('delivery_distance') %></h2>
+      <% if Spree::Config[:delivery_distance] -%>
+        <p>
+          <%= Spree::Config[:delivery_distance] %>&nbsp;<span><%= Geokit::default_units %></span>
+        </p>
+      <% end -%>
+    </div>
+    <div>
+      <h2><%= t('time_to_deliver') %></h2>
+      <% if Spree::Config[:time_to_deliver] -%>
+        <p>
+          <%= Spree::Config[:time_to_deliver] %>&nbsp;<span>min</span>
+        </p>
+      <% end -%>
+    </div>
+    <div>
+      <h2><%= t('minimum_order') %></h2>
+      <% if Spree::Config[:minimum_order] -%>
+        <p>
+          <%= Spree::Config[:minimum_order] %>&nbsp;<span>&euro;</span>
+        </p>
+      <% end -%>
+    </div>
+
+    <p><%= link_to_with_icon 'edit', t("edit"), edit_admin_geo_settings_path %></p>
+  </div>
+
+  <div id="geo_map">
+    <% if @lat && @lng -%>
+      <div id="map_canvas"></div>
+    <% end -%>
+  </div>
+</div>
+
+<% javascript_tag do -%>
+  var address = '<%= Spree::Config[:address] %>';
+  var distance = '<%= Spree::Config[:delivery_distance] %>';
+  var lat = '<%= @lat %>';
+  var lng = '<%= @lng %>';
+<% end -%>

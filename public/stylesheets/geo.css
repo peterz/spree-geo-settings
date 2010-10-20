@@ -1,0 +1,19 @@
+#geo_wrapper {
+  overflow: hidden;
+}
+
+#geo_settings {
+  float: left;
+  width: 300px;
+}
+
+#geo_map {
+  float: left;
+  width: 620px;
+}
+
+#map_canvas {
+  width: 750px;
+  height: 512px;
+  position: relative;
+}

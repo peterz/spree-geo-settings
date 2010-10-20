@@ -1,0 +1,8 @@
+---
+sl:
+  geo_settings: "Lokacijske nastavitve"
+  geo_settings_description: "Urejanje lokacijskih nastavitev."
+  delivery_distance: "Radij Dostave"
+  out_of_range: "Dostavljamo samo v kraje, ki so oddaljeni manj kot {{distance}} km."
+  time_to_deliver: "Predviden čas dostave"
+  minimum_order: "Minimalna vrednost naročila"
