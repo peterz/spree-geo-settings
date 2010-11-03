@@ -1,5 +1,4 @@
 class GeoSettingsHooks < Spree::ThemeSupport::HookListener
-
   insert_after(:admin_configurations_menu) do
     %(<tr>
       <td><%= link_to t(:geo_settings), admin_geo_settings_url %></td>
@@ -11,5 +10,4 @@ class GeoSettingsHooks < Spree::ThemeSupport::HookListener
     %(<li<%= raw(' class="active"') if controller.controller_name == 'geo_settings' %>>
     <%= link_to t(:geo_settings), admin_geo_settings_path %></li>) 
   end
-
 end

@@ -14,7 +14,7 @@ var Geo = {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
     
     var contentString = '<h2>' + marker_text +  '</h2>' +
     '<div>' + address + '</div>';

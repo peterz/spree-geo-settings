@@ -4,6 +4,5 @@ en:
   geo_settings_description: "Configure geo location based settings."
   delivery_distance: "Delivery Distance"
   out_of_range: "We are only delivering in places within {{distance}} km."
-  time_to_deliver: "Time to deliver."
-  minimum_order: "Minimum order."
-  
+  time_to_deliver: "Time to deliver"
+  minimum_order: "Minimum order"

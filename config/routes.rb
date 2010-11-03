@@ -1,7 +1,9 @@
-# Put your extension routes here.
+Rails.application.routes.draw do
 
-map.namespace :admin do |admin|
-  admin.resource :geo_settings
+  namespace :admin do
+    resource :geo_settings
+  end
+
+  match '/check_address' => 'geo_settings#check_address'
+
 end
-
-map.check_address 'check_address', :controller => 'geo_settings', :action => 'check_address'

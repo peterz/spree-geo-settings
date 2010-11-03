@@ -1,4 +1,5 @@
-# Summary
+GeoSettings
+===========
 
 Extension for calculating distance for delivery. Based on entered delivery distance, extension calculate if shipping address is in that distance. If it is not order can not be proceeded. Distance is calculated based on driving direction.
 
@@ -9,10 +10,9 @@ You could managed following preferences:
 * minimum_order - minimum value of order
 * delivery_distance - distance in within you deliver orders
 
-## Installation
+Installation
+============
 
-    script/extension install git://github.com/peterz/spree-geo-settings.git
-
-## TO DO
-
-* specs
+1. Add `gem "geo_settings"` to your Gemfile
+1. Run `bundle install`
+1. Run `rails g geo_settings:install`

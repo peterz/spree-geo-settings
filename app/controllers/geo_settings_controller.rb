@@ -6,14 +6,10 @@ class GeoSettingsController < ApplicationController
       
       @distance = GoogleMaps::Directions.get_distance( Spree::Config[:address], params[:address])
       
-      unless @distance == "NOT_FOUND"
-        if GoogleMaps::Directions.get_distance( Spree::Config[:address], params[:address]) > Spree::Config[:delivery_distance].to_f
-          @respond = false
-        else
-          @respond = true
-        end
-      else
+      if @distance.kind_of?(Float) && @distance > Spree::Config[:delivery_distance].to_f
         @respond = false
+      else
+        @respond = true
       end
     else
       @respond = false
