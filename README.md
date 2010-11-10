@@ -15,4 +15,4 @@ Installation
 
 1. Add `gem "geo_settings"` to your Gemfile
 1. Run `bundle install`
-1. Run `rails g geo_settings:install`
+1. Run `rake geo_settings:install`
